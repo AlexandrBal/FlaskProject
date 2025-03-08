@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    {% block title %}
-    {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-{% block body %}
-{% endblock %}
+    <nav class="navigation">
+        <ul class="posts">
+            <li><a href="/">Home</a></li>
+            <li><a href="/posts">Posts</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
 </body>
 </html>

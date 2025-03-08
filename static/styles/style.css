@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(37, 37, 37);
+    color: white;
+}
+
+.posts {
+    list-style-type: none;
+    background-color: rgb(67, 67, 67);
+    margin: 0;
+    padding: 0;
+}
+
+.posts li {
+    display: inline-block;
+}
+
+.posts li a {
+    text-decoration: none;
+    color: aliceblue;
+    display: block;
+    padding: 25px;
+    font-size: 30px;
+}
+
+
+.posts a:hover {
+    background-color: rgb(84, 154, 131);
+}
