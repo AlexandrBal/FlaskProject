@@ -47,6 +47,15 @@ def init_db():
                  )""")
     conn.close()
 
+@app.route("/delete/<int:post_id>", methods=['POST'])
+def delete_post(post_id):
+    if request.method == "POST":
+        conn = get_db_connection()
+        conn.execute("DELETE FROM posts WHERE id = ?", (post_id,))
+        conn.commit()
+        conn.close()
+    return redirect(url_for('index'))
+
 @app.before_request
 def before_first_request():
     init_db()
